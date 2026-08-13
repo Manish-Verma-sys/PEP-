@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ALERTS, FOCUS_AREAS, REGULATORS } from '../data/alerts.js';
+import { ALERTS, FOCUS_AREAS, REGULATORS } from '../alerts.js';
 import { generateInsight, providerStatus } from './insights.js';
 import { fetchLiveAlerts, liveEnabled } from './sources.js';
 
