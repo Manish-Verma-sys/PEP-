@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: regwatch
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: REGWATCH_PROVIDER
+        value: gemini
+      - key: REGWATCH_LIVE
+        value: "true"
+      # Set your real key in the Render dashboard (Environment tab), not here.
+      - key: REGWATCH_API_KEY
+        sync: false

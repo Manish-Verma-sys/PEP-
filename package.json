@@ -1,0 +1,18 @@
+{
+  "name": "regwatch",
+  "version": "1.0.0",
+  "description": "RegWatch — regulatory early-warning system for R&D (Codex/FDA/EFSA/FSSAI signal monitoring with AI-generated insights). Demo/prototype.",
+  "type": "module",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "license": "MIT"
+}
