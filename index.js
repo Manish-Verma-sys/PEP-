@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ALERTS, FOCUS_AREAS, REGULATORS } from '../data/alerts.js';
+import { ALERTS, FOCUS_AREAS, REGULATORS } from './alerts.js';
 import { generateInsight, providerStatus } from './insights.js';
 import { getLiveResearch, liveEnabled, cacheAgeMs } from './live.js';
 
@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(__dirname));
 
 // Default scouting (used if live research doesn't supply its own).
 const SEED_SCOUTING = [
@@ -104,7 +104,7 @@ app.get('/api/alerts/:id/insight', async (req, res) => {
 
 // SPA fallback
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 app.listen(PORT, () => {
